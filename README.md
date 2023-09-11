@@ -1,1 +1,1 @@
-# SerialApp
+this is a serial monitor app which can also be used to read json files
