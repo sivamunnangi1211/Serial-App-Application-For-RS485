@@ -7,7 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 from generated_ui import Ui_MainWindow  # Import your generated UI module
 
-
+#define the class for application
 class SerialMonitorApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -26,7 +26,7 @@ class SerialMonitorApp(QtWidgets.QMainWindow, Ui_MainWindow):
             "1.5": serial.STOPBITS_ONE_POINT_FIVE,
             "2": serial.STOPBITS_TWO
         }
-
+# connect the pushbuttons using clickedconnect 
         self.pushButton.clicked.connect(self.connect_serial) #declaring push buttons
         self.pushButton_2.clicked.connect(self.send_command)
         self.pushButton_3.clicked.connect(self.refresh_ports)
@@ -63,6 +63,7 @@ class SerialMonitorApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.update_baud_rates()
         self.enable_dark_mode()
 
+#define the functions for each feature 
     def on_carriage_return_changed(self, state):
         self.append_r = state == QtCore.Qt.Checked
 
