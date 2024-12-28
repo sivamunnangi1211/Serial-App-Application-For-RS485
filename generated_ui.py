@@ -10,158 +10,450 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(813, 600)
+        MainWindow.resize(1000, 580) 
+        MainWindow.setStyleSheet("background-color: #f5f5dc;")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(10, 20, 51, 16))
-        self.label.setObjectName("label")
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(70, 20, 69, 22))
-        self.comboBox.setObjectName("comboBox")
+
+        # self.imageLabel = QtWidgets.QLabel(self.centralwidget)
+        # self.imageLabel.setGeometry(QtCore.QRect(10, 10, 200, 120))  # Adjust the size and position as needed
+        # self.imageLabel.setPixmap(QtGui.QPixmap(r"logo.png")) # Set the path to your image
+        # self.imageLabel.setScaledContents(True)
+        # self.imageLabel.setObjectName("imageLabel")
+
+        self.companyNameLabel = QtWidgets.QLabel(self.centralwidget)
+        self.companyNameLabel.setGeometry(QtCore.QRect(300, 50, 800, 30))  # Increase the width and adjust x position
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        self.companyNameLabel.setFont(font)
+        self.companyNameLabel.setText("Controlytics AI Private Limited")
+        self.companyNameLabel.setStyleSheet("color: green;")
+        self.companyNameLabel.setObjectName("companyNameLabel")
+
+
+        # Unified style for all QLabel widgets
+        common_style = """
+            color: #2C3E50;              /* Text color */
+            font-size: 15px;             /* Font size */
+            font-weight: bold;           /* Font weight */
+        """
+
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(200, 20, 51, 21))
+        self.label_2.setGeometry(QtCore.QRect(30, 280, 81, 21)) #baud rate
         self.label_2.setObjectName("label_2")
-        self.comboBox_2 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_2.setGeometry(QtCore.QRect(250, 20, 69, 22))
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(10, 140, 51, 16))
-        self.label_3.setObjectName("label_3")
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(90, 90, 221, 21))
-        self.textEdit.setObjectName("textEdit")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 50, 61, 23))
-        self.pushButton.setObjectName("pushButton")
+        self.label_2.setStyleSheet(common_style)
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(330, 20, 47, 21))
+        self.label_4.setGeometry(QtCore.QRect(0, 0, 0, 0)) #format 
         self.label_4.setObjectName("label_4")
-        self.comboBox_3 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_3.setGeometry(QtCore.QRect(370, 20, 69, 22))
-        self.comboBox_3.setObjectName("comboBox_3")
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(30, 90, 47, 16))
-        self.label_5.setObjectName("label_5")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(330, 90, 51, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.label_4.setStyleSheet(common_style)
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(560, 20, 47, 16))
+        self.label_6.setGeometry(QtCore.QRect(0, 0, 0, 0)) #databits
         self.label_6.setObjectName("label_6")
-        self.comboBox_4 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_4.setGeometry(QtCore.QRect(610, 20, 69, 22))
-        self.comboBox_4.setObjectName("comboBox_4")
+        self.label_6.setStyleSheet(common_style)
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(560, 60, 47, 21))
+        self.label_7.setGeometry(QtCore.QRect(0, 0, 0, 0)) #parity
         self.label_7.setObjectName("label_7")
-        self.comboBox_5 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_5.setGeometry(QtCore.QRect(610, 60, 69, 22))
-        self.comboBox_5.setObjectName("comboBox_5")
+        self.label_7.setStyleSheet(common_style)
         self.label_8 = QtWidgets.QLabel(self.centralwidget)
-        self.label_8.setGeometry(QtCore.QRect(560, 100, 47, 21))
+        self.label_8.setGeometry(QtCore.QRect(0, 0, 0, 0)) #stopbits
         self.label_8.setObjectName("label_8")
-        self.comboBox_6 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_6.setGeometry(QtCore.QRect(610, 100, 69, 22))
-        self.comboBox_6.setObjectName("comboBox_6")
-        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(160, 50, 75, 23))
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.label_8.setStyleSheet(common_style)
         self.label_9 = QtWidgets.QLabel(self.centralwidget)
-        self.label_9.setGeometry(QtCore.QRect(390, 90, 41, 20))
+        self.label_9.setGeometry(QtCore.QRect(0, 0, 0, 0))  #view as heading
         self.label_9.setObjectName("label_9")
+        self.label_9.setStyleSheet(common_style)
+        self.label_10 = QtWidgets.QLabel(self.centralwidget)
+        self.label_10.setGeometry(QtCore.QRect(360, 360, 120, 21))  # fixed transmission
+        self.label_10.setObjectName("label_10")
+        self.label_10.setStyleSheet(common_style)
+        self.label_11 = QtWidgets.QLabel(self.centralwidget)
+        self.label_11.setGeometry(QtCore.QRect(360, 520, 87, 21))  #io drive mode
+        self.label_11.setObjectName("label_11")
+        self.label_11.setStyleSheet(common_style)
+        self.label_12= QtWidgets.QLabel(self.centralwidget)
+        self.label_12.setGeometry(QtCore.QRect(360, 440, 157, 21))  #wireless wake up time
+        self.label_12.setObjectName("label_12")
+        self.label_12.setStyleSheet(common_style)
+        self.label_13 = QtWidgets.QLabel(self.centralwidget)
+        self.label_13.setGeometry(QtCore.QRect(360, 280, 87, 21))  #fec switch
+        self.label_13.setObjectName("label_13")
+        self.label_13.setStyleSheet(common_style)
+        self.label_14 = QtWidgets.QLabel(self.centralwidget)
+        self.label_14.setGeometry(QtCore.QRect(30, 520, 127, 21))  #transmission power
+        self.label_14.setObjectName("label_14")
+        self.label_14.setStyleSheet(common_style)
+        self.label_15 = QtWidgets.QLabel(self.centralwidget)
+        self.label_15.setGeometry(QtCore.QRect(30, 360, 117, 21))  #UART parity bit
+        self.label_15.setObjectName("label_15")
+        self.label_15.setStyleSheet(common_style)
+        self.label_16 = QtWidgets.QLabel(self.centralwidget)
+        self.label_16.setGeometry(QtCore.QRect(30, 440, 107, 21))  #Air data rate
+        self.label_16.setObjectName("label_16")
+        self.label_16.setStyleSheet(common_style)
+        # self.label_17 = QtWidgets.QLabel(self.centralwidget)
+        # self.label_17.setGeometry(QtCore.QRect(30, 370, 107, 21))  #Air data rate
+        # self.label_17.setObjectName("label_17")
+        self.label_18 = QtWidgets.QLabel(self.centralwidget)
+        self.label_18.setGeometry(QtCore.QRect(690, 360, 107, 21))  #Address
+        self.label_18.setObjectName("label_18")
+        self.label_18.setStyleSheet(common_style)
+        self.label_19 = QtWidgets.QLabel(self.centralwidget)
+        self.label_19.setGeometry(QtCore.QRect(690, 440, 107, 21))  #Channel
+        self.label_19.setObjectName("label_19")
+        self.label_19.setStyleSheet(common_style)
+        self.label_20 = QtWidgets.QLabel(self.centralwidget)
+        self.label_20.setGeometry(QtCore.QRect(690, 280, 87, 21))  #Frame
+        self.label_20.setObjectName("label_20")
+        self.label_20.setStyleSheet(common_style)
+
+
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)  # port selection
+        self.comboBox.setGeometry(QtCore.QRect(410, 140, 200, 40))
+        self.comboBox.setObjectName("comboBox")
+        
+
+        # Set styles to make the ComboBox more appealing
+        self.comboBox.setStyleSheet("""
+            QComboBox {
+                border: 2px solid #4CAF50;
+                border-radius: 10px;
+                padding: 5px;
+                font-weight: bold;
+                font-size: 14px;
+                color: #333;
+                background-color: #f0f0f0;
+            }
+        """)
+
+        common_combobox_style = """
+            QComboBox {
+                color: #2C3E50;                /* Text color */
+                font-size: 14px;               /* Font size */
+                font-weight: bold;             /* Font weight */
+                background-color: #ECF0F1;     /* Background color */
+                border: 2px solid #4CAF50;     /* Border color */
+                padding: 5px;                  /* Padding */
+                border-radius: 8px;            /* Rounded corners */
+                min-height: 30px;              /* Minimum height */
+            }
+            QComboBox:hover {
+                background-color: #D5DBDB;     /* Background color on hover */
+                border: 2px solid #AAB7B8;     /* Border color on hover */
+            }
+            QComboBox:focus {
+                background-color: #FDFEFE;     /* Background color on focus */
+                border: 2px solid #5DADE2;     /* Border color on focus */
+            }
+            QComboBox QListView {
+                background-color: #F2F4F4;     /* Dropdown list background */
+                border: 1px solid #BDC3C7;
+                color: #2C3E50;
+                font-size: 14px;
+                selection-background-color: #AED6F1; /* Background color for selected item */
+                selection-color: #1B2631;      /* Text color for selected item */
+                outline: none;                 /* Removes outline */
+            }
+            QComboBox QAbstractItemView {
+                background-color: #F2F4F4;     /* Background color of the item view */
+                border: 1px solid #BDC3C7;
+                selection-background-color: #AED6F1; /* Selection background color */
+                selection-color: #1B2631;      /* Selection text color */
+                padding: 3px;
+                border-radius: 5px;
+            }
+            QComboBox::item {
+                padding: 8px;                  /* Item padding */
+            }
+            QComboBox::item:hover {
+                background-color: #D6EAF8;     /* Background color when hovering over an item */
+                color: #154360;                /* Text color on hover */
+            }
+            QComboBox::item:selected {
+                background-color: #85C1E9;     /* Selected item background color */
+                color: #1B2631;                /* Selected item text color */
+            }
+            
+        """
+
+        common_button_style = """
+            QPushButton {
+                background-color: transparent;
+                border: none;
+                font-size: 20px;  /* Adjust size as needed */
+            }
+            QPushButton:hover {
+                color: blue;  /* Optional: change color on hover */
+            }
+        """   
+
+        self.comboBox_2 = QtWidgets.QComboBox(self.centralwidget)   
+        self.comboBox_2.setGeometry(QtCore.QRect(0,0,0,0))    #9600 values dropdown
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.setStyleSheet(common_combobox_style)
+        self.comboBox_3 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_3.setGeometry(QtCore.QRect(0,0,0,0))    #String or Hex dropdown
+        self.comboBox_3.setObjectName("comboBox_3")
+        self.comboBox_3.setStyleSheet(common_combobox_style)
+        self.comboBox_4 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_4.setGeometry(QtCore.QRect(0,0,0,0))   # 5,8 values dropdown
+        self.comboBox_4.setObjectName("comboBox_4")
+        self.comboBox_4.setStyleSheet(common_combobox_style)
+        self.comboBox_5 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_5.setGeometry(QtCore.QRect(0,0,0,0))   # no parity,event parity dropdown
+        self.comboBox_5.setObjectName("comboBox_5")
+        self.comboBox_5.setStyleSheet(common_combobox_style)
+        self.comboBox_6 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_6.setGeometry(QtCore.QRect(0,0,0,0))   #1,1.5,2 values dropdown
+        self.comboBox_6.setObjectName("comboBox_6")
+        self.comboBox_6.setStyleSheet(common_combobox_style)
         self.comboBox_7 = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_7.setGeometry(QtCore.QRect(430, 90, 69, 22))
+        self.comboBox_7.setGeometry(QtCore.QRect(0,0,0,0))   # hex,string,chart dropdown
         self.comboBox_7.setObjectName("comboBox_7")
-        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(10, 160, 51, 23))
-        self.pushButton_4.setObjectName("pushButton_4")
+        self.comboBox_7.setStyleSheet(common_combobox_style)
+        self.comboBox_8 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_8.setGeometry(QtCore.QRect(470, 430, 150, 32))   #250ms values dropdown
+        self.comboBox_8.setObjectName("comboBox_8")
+        # self.infoButton_8 = self.create_info_button(630, 430, "infoButton_8", common_button_style)
+        self.comboBox_8.setStyleSheet(common_combobox_style)
+        self.comboBox_9 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_9.setGeometry(QtCore.QRect(470, 270, 150, 32))    #FEC dropdown
+        self.comboBox_9.setObjectName("comboBox_9")
+        self.infoButton_9 = self.create_info_button(630, 270, "infoButton_9", common_button_style)
+        self.comboBox_9.setStyleSheet(common_combobox_style)
+        self.comboBox_10 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_10.setGeometry(QtCore.QRect(130, 510, 150, 32))    #20dBm dropdown
+        self.comboBox_10.setObjectName("comboBox_10")
+        # self.infoButton_10 = self.create_info_button(290, 510, "infoButton_10", common_button_style)
+        self.comboBox_10.setStyleSheet(common_combobox_style)
+        self.comboBox_11 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_11.setGeometry(QtCore.QRect(130, 430, 150, 32))    #0.3k values dropdown
+        self.comboBox_11.setObjectName("comboBox_11")
+        self.infoButton_11 = self.create_info_button(290, 430, "infoButton_11", common_button_style)
+        self.comboBox_11.setStyleSheet(common_combobox_style)
+        self.comboBox_12 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_12.setGeometry(QtCore.QRect(130, 350, 150, 32))    #8N1 dropdown
+        self.comboBox_12.setObjectName("comboBox_12")
+        # self.infoButton_12 = self.create_info_button(290, 350, "infoButton_12", common_button_style)
+        self.comboBox_12.setStyleSheet(common_combobox_style)
+        self.comboBox_13 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_13.setGeometry(QtCore.QRect(470, 350, 150, 32))    #fixed mode dropdown
+        self.comboBox_13.setObjectName("comboBox_13")
+        self.infoButton_13 = self.create_info_button(630, 350, "infoButton_13", common_button_style) 
+        self.comboBox_13.setStyleSheet(common_combobox_style)
+        self.comboBox_14 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_14.setGeometry(QtCore.QRect(470, 510, 150, 32))    #TXD and AUX 
+        self.comboBox_14.setObjectName("comboBox_14")
+        self.infoButton_14 = self.create_info_button(630, 510, "infoButton_14", common_button_style)
+        self.comboBox_14.setStyleSheet(common_combobox_style)
+        self.comboBox_15 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_15.setGeometry(QtCore.QRect(770, 350, 150, 32))   # address dropdown
+        self.comboBox_15.setObjectName("comboBox_15")
+        self.comboBox_15.setEditable(True)  # Allow text entry
+        self.infoButton_15 = self.create_info_button(930, 350, "infoButton_15", common_button_style)
+        self.comboBox_15.setStyleSheet(common_combobox_style)
+        # self.comboBox_16 = QtWidgets.QComboBox(self.centralwidget)
+        # self.comboBox_16.setGeometry(QtCore.QRect(120, 420, 69, 22))   #
+        # self.comboBox_16.setObjectName("comboBox_16")
+        self.comboBox_17 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_17.setGeometry(QtCore.QRect(770, 430, 150, 32))   # channel dropdown
+        self.comboBox_17.setObjectName("comboBox_17")
+        self.comboBox_17.setEditable(True)  # Allow text entry
+        self.infoButton_17 = self.create_info_button(930, 430, "infoButton_17", common_button_style)
+        self.comboBox_17.setStyleSheet(common_combobox_style)
+        self.comboBox_18 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_18.setGeometry(QtCore.QRect(770,270,150,32))   # frame
+        self.comboBox_18.setObjectName("comboBox_18")
+        # self.infoButton_18 = self.create_info_button(930, 270, "infoButton_18", common_button_style)
+        self.comboBox_18.setStyleSheet(common_combobox_style)
+        self.comboBox_19 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_19.setGeometry(QtCore.QRect(130, 270, 150, 32))   # baud rate 
+        self.comboBox_19.setObjectName("comboBox_19")
+        # self.infoButton_19 = self.create_info_button(290, 270, "infoButton_19", common_button_style)
+        self.comboBox_19.setStyleSheet(common_combobox_style)
+
+        self.populate_dropdowns()  # Call the method to populate dropdowns
+
+        # Styling for buttons
+        button_style = """
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border: 2px solid #4CAF50;
+                margin-right: 20px;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 14px;
+                padding: 5px 10px;
+            }
+            QPushButton:hover {ju
+                background-color: #45a049;
+            }
+            QPushButton:pressed {
+                background-color: #388E3C;
+            }
+        """
+
+        # Create buttons
+        self.pushButton = QtWidgets.QPushButton("Connect", self.centralwidget)
+        self.pushButton.setStyleSheet(button_style)
+        self.pushButton.setGeometry(QtCore.QRect(630, 130, 151, 32))  # Button at (590, 130), Size (81, 32)
+        self.pushButton_2 = QtWidgets.QPushButton("Refresh Port", self.centralwidget)
+        self.pushButton_2.setStyleSheet(button_style)
+        self.pushButton_2.setGeometry(QtCore.QRect(790, 170, 151, 32))  # Button at (690, 170), Size (81, 32)
+        self.pushButton_3 = QtWidgets.QPushButton("Clear", self.centralwidget)
+        self.pushButton_3.setStyleSheet(button_style)
+        self.pushButton_3.setGeometry(QtCore.QRect(450, 200, 151, 40))  # Button at (620, 213), Size (81, 32)
+        self.pushButton_4 = QtWidgets.QPushButton("Disconnect", self.centralwidget)
+        self.pushButton_4.setStyleSheet(button_style)
+        self.pushButton_4.setGeometry(QtCore.QRect(630, 170, 151, 32))  # Button at (590, 170), Size (81, 32)
+        self.pushButton_5 = QtWidgets.QPushButton("Set Params", self.centralwidget)
+        self.pushButton_5.setStyleSheet(button_style)
+        self.pushButton_5.setGeometry(QtCore.QRect(790, 213, 151, 32))  # Button at (520, 213), Size (81, 32)
+        self.pushButton_6 = QtWidgets.QPushButton("Version", self.centralwidget)
+        self.pushButton_6.setStyleSheet(button_style)
+        self.pushButton_6.setGeometry(QtCore.QRect(790, 130, 151, 32))  # Button at (690, 130), Size (81, 32)
+        self.pushButton_7 = QtWidgets.QPushButton("Test", self.centralwidget)
+        self.pushButton_7.setStyleSheet(button_style)
+        self.pushButton_7.setGeometry(QtCore.QRect(790, 50, 151, 32))   #300, 50, 800, 30
+
+        # Set window title and dimensions
+        self.setWindowTitle("Button Grid Example")
+        self.setGeometry(400, 200, 960, 600)  # Set the window position and size (left, top, width, height)
+
         self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox.setGeometry(QtCore.QRect(700, 20, 111, 17))
+        self.checkBox.setGeometry(QtCore.QRect(350, 300, 111, 17))
         self.checkBox.setObjectName("checkBox")
         self.checkBox_2 = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_2.setGeometry(QtCore.QRect(700, 50, 91, 17))
+        self.checkBox_2.setGeometry(QtCore.QRect(480, 300, 111, 17))
         self.checkBox_2.setObjectName("checkBox_2")
+
+        # self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
+        # self.textEdit.setGeometry(QtCore.QRect(490, 220, 185, 25)) #command box
+        # self.textEdit.setObjectName("textEdit")
         self.textEdit_2 = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit_2.setGeometry(QtCore.QRect(80, 150, 301, 391))
+        self.textEdit_2.setGeometry(QtCore.QRect(30, 140, 350, 101))  # response box
         self.textEdit_2.setObjectName("textEdit_2")
-        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setGeometry(QtCore.QRect(80, 50, 75, 23))
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.label_10 = QtWidgets.QLabel(self.centralwidget)
-        self.label_10.setGeometry(QtCore.QRect(400, 140, 61, 31))
-        self.label_10.setObjectName("label_10")
-        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(390, 180, 75, 23))
-        self.pushButton_6.setObjectName("pushButton_6")
-        self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_7.setGeometry(QtCore.QRect(390, 220, 75, 23))
-        self.pushButton_7.setObjectName("pushButton_7")
-        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(480, 130, 301, 201))
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.pushButton_8 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_8.setGeometry(QtCore.QRect(390, 400, 75, 23))
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_9.setGeometry(QtCore.QRect(390, 260, 75, 23))
-        self.pushButton_9.setObjectName("pushButton_9")
-        self.tableWidget_2 = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget_2.setGeometry(QtCore.QRect(480, 341, 301, 211))
-        self.tableWidget_2.setObjectName("tableWidget_2")
-        self.tableWidget_2.setColumnCount(0)
-        self.tableWidget_2.setRowCount(0)
-        self.label_11 = QtWidgets.QLabel(self.centralwidget)
-        self.label_11.setGeometry(QtCore.QRect(400, 360, 61, 16))
-        self.label_11.setObjectName("label_11")
-        self.pushButton_10 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_10.setGeometry(QtCore.QRect(390, 440, 75, 23))
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.pushButton_11 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_11.setGeometry(QtCore.QRect(390, 490, 75, 23))
-        self.pushButton_11.setObjectName("pushButton_11")
+
+
+        self.info_map = {
+            "infoButton_9": "1.After turn off FEC, the actual data transmission rate increases while anti-interference ability decreases. Also the transmission distance is relatively short.\n 2.Both Communication parties must keep on the same pages about turn-on or turn-off FEC.",
+            "infoButton_11": "1.The air data rate must keep the same for both communication parties.\n2.The lower the air data rate, the longer the transmitting distance, better anti-interference performance and longer transmitting time.",
+            "infoButton_13": "1.In fixed transmission mode,the first three bytes of each user's data frame can be used as high/low address and channel.\n2.The module changes its address and channel when transmit. And it will revert to original setting after complete the process.",
+            "infoButton_14": "1.This bit is used to the module internal pull-up resistor. It also increases the levels adaptability in case of open drain.\n 2.But in some cases, it may need external pull-up resistor.",
+            "infoButton_15": "Address and channel selection values should be the same because, for successful communication between a pair of devices, they need to match",
+            "infoButton_17": "Address and channel selection values should be the same because, for successful communication between a pair of devices, they need to match",
+        }
+        # Set styles to enhance the appearance of the QTextEdit
+        self.textEdit_2.setStyleSheet("""
+            QTextEdit {
+                border: 2px solid #4CAF50;
+                border-radius: 10px;
+                padding: 8px;
+                background-color: #f0f8ff;
+                color: #333;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            QTextEdit:hover {
+                border: 2px solid #45a049;
+                background-color: #e0f7fa;
+            }
+            QTextEdit:focus {
+                border: 2px solid #008080;
+                background-color: #e6f7ff;
+            }
+        """)
+
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 813, 21))
+        self.menubar.setGeometry(QtCore.QRect(100, 100, 813, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+
+    def create_combobox(self, x, y, name, style):
+        comboBox = QtWidgets.QComboBox(self.centralwidget)
+        comboBox.setGeometry(QtCore.QRect(x, y, 160, 32))
+        comboBox.setObjectName(name)
+        comboBox.setStyleSheet(style)
+        return comboBox
+
+    def create_info_button(self, x, y, name, style):
+        button = QtWidgets.QPushButton(self.centralwidget)
+        button.setGeometry(QtCore.QRect(x, y + 10, 22, 22))  # Move button down by 5 pixels
+        button.setObjectName(name)
+        button.setStyleSheet(style + """
+            QPushButton {
+                border-radius: 10px;  /* Decreased radius for less roundness */
+                border: 2px solid blue;  /* Border width and color */
+                background-color: #f0f0f0;  /* Background color */
+                color: black;  /* Text color */
+                font-size: 15px;  /* Adjust font size */
+                padding: 0px;  /* Remove padding */
+            }
+            QPushButton:hover {
+                background-color: #d0d0d0;  /* Change background on hover */
+            }
+        """)
+        button.setText("?")  # Set text to '?'
+        button.clicked.connect(self.show_info)
+        return button
+
+    def show_info(self):
+        sender = self.sender()
+        button_name = sender.objectName()
+        
+        # Get the corresponding information for the button
+        info_text = self.info_map.get(button_name, "No information available.")
+        
+        # Display the information in a message box
+        QtWidgets.QMessageBox.information(self, "Info", info_text)
+
+
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "Serial Port"))
-        self.label_2.setText(_translate("MainWindow", "baud rate"))
-        self.label_3.setText(_translate("MainWindow", "Response"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Controlytics.ai"))
+        self.label_2.setText(_translate("MainWindow", "Baud Rate "))
+        # self.label_4.setText(_translate("MainWindow", "Format: "))
+        # self.label_6.setText(_translate("MainWindow", "Data Bits: "))
+        # self.label_7.setText(_translate("MainWindow", "Parity: "))
+        # self.label_8.setText(_translate("MainWindow", "Stop Bits: "))
+        # self.label_9.setText(_translate("MainWindow", "View as: "))
+        self.label_10.setText(_translate("MainWindow", "Fixed mode "))
+        self.label_11.setText(_translate("MainWindow", "IO mode "))
+        self.label_12.setText(_translate("MainWindow", "WOR timing "))
+        self.label_13.setText(_translate("MainWindow", "FEC "))
+        self.label_14.setText(_translate("MainWindow", "Power "))
+        self.label_15.setText(_translate("MainWindow", "Parity "))
+        self.label_16.setText(_translate("MainWindow", "Air Rate "))
+        # self.label_17.setText(_translate("MainWindow", "High Address "))
+        self.label_18.setText(_translate("MainWindow", "Address "))
+        self.label_19.setText(_translate("MainWindow", "Channel "))
+        self.label_20.setText(_translate("MainWindow", "Frame "))
         self.pushButton.setText(_translate("MainWindow", "Connect"))
-        self.label_4.setText(_translate("MainWindow", "format"))
-        self.label_5.setText(_translate("MainWindow", "Command"))
-        self.pushButton_2.setText(_translate("MainWindow", "Send"))
-        self.label_6.setText(_translate("MainWindow", "Data Bits"))
-        self.label_7.setText(_translate("MainWindow", "Parity"))
-        self.label_8.setText(_translate("MainWindow", "Stop Bits"))
-        self.pushButton_3.setText(_translate("MainWindow", "Refresh Ports"))
-        self.label_9.setText(_translate("MainWindow", "View as"))
-        self.pushButton_4.setText(_translate("MainWindow", "Clear"))
+        self.pushButton_2.setText(_translate("MainWindow", "Refresh Ports"))
+        self.pushButton_3.setText(_translate("MainWindow", "Clear"))
+        self.pushButton_4.setText(_translate("MainWindow", "Disconnect"))
+        self.pushButton_5.setText(_translate("MainWindow", "Set Params"))
+        self.pushButton_6.setText(_translate("MainWindow", "Version"))
         self.checkBox.setText(_translate("MainWindow", "Carriage return(\"r\")"))
         self.checkBox_2.setText(_translate("MainWindow", "New Line(\"n\")"))
-        self.pushButton_5.setText(_translate("MainWindow", "Disconnect"))
-        self.label_10.setText(_translate("MainWindow", "Json Read"))
-        self.pushButton_6.setText(_translate("MainWindow", "fetch"))
-        self.pushButton_7.setText(_translate("MainWindow", "submit"))
-        self.pushButton_8.setText(_translate("MainWindow", "fetchB"))
-        self.pushButton_9.setText(_translate("MainWindow", "Clear"))
-        self.label_11.setText(_translate("MainWindow", "Json2 Read"))
-        self.pushButton_10.setText(_translate("MainWindow", "submit2"))
-        self.pushButton_11.setText(_translate("MainWindow", "Clear2"))
+        
+    def populate_dropdowns(self):
+        # Populate dropdown 1 with values from "00H" to "FFH"
+        for i in range(65536):
+            self.comboBox_15.addItem("{:04X}H".format(i))
+
+        for i in range(32):
+            self.comboBox_17.addItem("{:02X}H".format(i))

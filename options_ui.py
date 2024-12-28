@@ -56,9 +56,6 @@ class Ui_Dialog(object):
         self.checkBox_2 = QtWidgets.QCheckBox(Dialog)
         self.checkBox_2.setGeometry(QtCore.QRect(180, 60, 91, 17))
         self.checkBox_2.setObjectName("checkBox_2")
-        self.pushButton = QtWidgets.QPushButton(Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(200, 120, 75, 23))
-        self.pushButton.setObjectName("pushButton")
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept) # type: ignore

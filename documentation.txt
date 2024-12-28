@@ -1,0 +1,67 @@
+1. Introduction
+The Serial Monitor Application is a Python-based tool designed for monitoring and interacting with serial devices. It provides a user-friendly interface for configuring serial communication settings, sending commands, and visualizing real-time data. Key features include real-time data monitoring, support for different baud rates, and JSON data handling.
+
+2. Getting Started
+2.1 Dependencies
+Ensure you have the following dependencies installed:
+
+Python (3.x recommended)
+PyQt5
+PySerial
+Install dependencies using the following command:
+
+bash
+Copy code
+pip install pyqt5 pyserial
+2.2 Installation
+3. Usage
+3.1 Launching the Application
+Execute the main.py file to launch the application:
+
+bash
+Copy code
+python main.py
+
+3.2 Connecting to a Serial Port
+Open the application.
+Select the desired serial port from the dropdown list (COMx - Port Description).
+Choose the appropriate baud rate and other settings.
+Click the "Connect" button to establish a serial connection.
+
+3.3 Sending Commands
+Enter the command in the text area labeled "Command."
+Click the "Send Command" button to transmit the command to the serial device.
+
+3.4 Real-Time Data Monitoring
+Enable real-time monitoring by checking the corresponding checkboxes.
+Received data will be displayed in the text area labeled "Response."
+
+3.5 JSON Data Handling
+Fetch JSON data from the connected device using the respective buttons.
+Edit and update JSON data through the table interface.
+Submit the modified JSON data back to the device.
+
+4. Configuration Options
+
+4.1 Baud Rates
+Choose the appropriate baud rate from the dropdown list.
+
+4.2 Data Bits, Parity, and Stop Bits
+Configure data bits, parity, and stop bits through the respective dropdown lists.
+
+4.3 Output Formats
+Select the desired output format for received data (String, Hex, Chart).
+
+5. Advanced Features
+5.1 Customization
+Customize the application theme and appearance using the provided options.
+
+5.2 Fetching and Updating JSON Data
+Fetch JSON data from the connected device and update it through the table interface.
+
+5.3 Real-Time Monitoring Settings
+Configure real-time monitoring settings, such as carriage return and newline options.
+
+6. Troubleshooting
+If encountering issues with serial communication, check the connection settings.
+Ensure that the correct COM port and baud rate are selected.
